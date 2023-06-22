@@ -1,0 +1,172 @@
+import React, { useState, useEffect } from "react";
+import { FaBars, FaUserAlt, FaCartArrowDown, FaQuestionCircle } from "react-icons/fa";
+
+
+import { NavLink, Outlet } from "react-router-dom";
+import { AiOutlineClose, AiOutlineMessage} from "react-icons/ai";
+import {MdOutlinePostAdd,MdReviews} from 'react-icons/md'
+import {AiFillStar,} from 'react-icons/ai';
+
+function Dashboard() {
+  const email = localStorage.getItem('email');
+
+  const [isOpen, setIsOpen] = useState(true);
+  const [mobileMenu, setMobileMenu] = useState(false);
+  const toggle = () => setIsOpen(!isOpen);
+  const menuItem = [
+    {
+      path: "add-blog",
+      name: "Add Blog",
+      icon: <MdOutlinePostAdd size={23}/>,
+    },
+   
+    {
+      path: "add-review",
+      name: "Add Review",
+      icon: <MdReviews size={20}/>,
+    },
+    {
+      path: "contacts",
+      name: "Contacts",
+      icon: <AiOutlineMessage size={20}/>,
+    },{
+      path: "my-blogs",
+      name: "My Blogs",
+      icon: <MdOutlinePostAdd size={20}/>,
+    },{
+      path: "my-reviews",
+      name: "Reviews",
+      icon: <AiFillStar size={20}/>,
+    },
+   
+  ];
+
+  function getWindowSize() {
+    const { innerWidth, innerHeight } = window;
+    return { innerWidth, innerHeight };
+  }
+
+  const [windowSize, setWindowSize] = useState(getWindowSize());
+
+  useEffect(() => {
+    function handleWindowResize() {
+      setWindowSize(getWindowSize());
+    }
+
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
+
+  const sizeOfTheWindow = windowSize.innerWidth;
+
+  if (sizeOfTheWindow < 900 && isOpen) {
+    setIsOpen(false);
+  }
+
+  return (
+    <div className="">
+      {/* navbar */}
+      <div className=" bg-secondary text-primary p-2 md:p-5 flex flex-col md:flex-row justify-between fixed top-0 left-0 right-0 ">
+        <div className="flex justify-between py-2 px-2 items-center">
+          <h1 className="text-2xl">ZEROPREPS</h1>
+          <div className="md:hidden">
+            {
+              mobileMenu ? 
+                <div onClick={(e) => setMobileMenu(!mobileMenu)}>
+                  <AiOutlineClose size={22}/>
+
+                </div>:
+                <div onClick={(e) => setMobileMenu(!mobileMenu)}>
+                  <FaBars size={22} />
+
+                  
+                </div>
+              
+            }
+          </div>
+       
+          
+        </div>
+          <hr className="w-full border-1 mb-4  border-primary md:hidden" />
+        <div className="flex gap-2 justify-end">
+         
+          <div className=" pr-10 flex gap-1 hover:cursor-pointer">
+            <p className="hidden sm:flex">Admin</p>
+          </div>
+        </div>
+      </div>
+
+      {/* main content*/}
+      <div className="flex h-[100vh]  pt-[100px] md:pt-[85px] overflow-hidden">
+        <div
+          style={{ width: isOpen ? "260px" : "50px" }}
+          className="hidden md:flex flex-col bg-secondary  h-[screen] overflow-y-auto w-[260px] ease-in-0ut duration-500 "
+        >
+          <div className="flex items-center align-middle py-[20px] pl-[15px] ">
+           
+            <div
+              style={{ marginLeft: isOpen ? "50px" : "0px" }}
+              className="flex text-[25px]  ml-[50px] "
+            >
+              {
+                isOpen ? < AiOutlineClose onClick={toggle} color='#fff' /> : <FaBars onClick={toggle} />
+            }
+              
+            </div>
+          </div>
+          {menuItem.map((item, index) => (
+            <NavLink
+              to={item.path}
+              key={index}
+              className="flex  py-[10px] px-[15px] gap-[15px]  border-b border-b-black bottom-2 ease-in-out duration-500  hover:bg-[#1a1a1a] hover:text-gray-400 hover:ease-in-out hover:duration-500 outline-none "
+            >
+              <div className="text-[23px]  text-light">{item.icon}</div>
+              <div
+                style={{ display: isOpen ? "block" : "none" }}
+                className="text-sm"
+              >
+                {item.name}
+              </div>
+            </NavLink>
+          ))}
+
+
+
+
+        </div>
+             {/* mobile sidebar */}
+        <div
+         className={
+          mobileMenu
+            ? 'absolute top-[108px] ease-in-out duration-500 h-screen text-light flex flex-col bg-secondary w-[100%] py-6 md:hidden'
+            : ' absolute left-[-100%] '
+        }
+        >
+          {menuItem.map((item, index) => (
+            <NavLink
+              onClick={() => setMobileMenu(!mobileMenu)}
+              to={item.path}
+              key={index}
+              className="flex  py-[10px] px-[15px] gap-[15px]  border-b border-b-black bottom-2 ease-in-out duration-500  hover:bg-[#1a1a1a] hover:ease-in-out hover:duration-500 "
+            >
+              <div className="text-[px]  text-primary">{item.icon}</div>
+              <div
+                className="text-sm text-light"
+              >
+                {item.name}
+              </div>
+            </NavLink>
+          ))}
+        </div>
+        <main className="w-full  bg-dark h-[100vh] my-0 px-0 md:px-0 overflow-y-scroll pb-[200px]">
+          <Outlet />
+        </main>
+      </div>
+    </div>
+  );
+}
+
+export default Dashboard;

@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    font-family: system-ui,  'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.active{
+    background-color: #ffd700;
+    color: #000016;
+    border-top-right-radius:6px;
+    border-bottom-left-radius:6px;
+}
+
+.x ol {
+    list-style-type: decimal;
+}
+.x ul {
+    list-style-type: disc;
+}
