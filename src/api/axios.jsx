@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://api.zeropreps.com';
+const BASE_URL = 'http://localhost:3501';
 
 export default axios.create({
     baseURL: BASE_URL

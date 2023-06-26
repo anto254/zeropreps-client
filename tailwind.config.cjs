@@ -21,6 +21,7 @@ module.exports = {
       backgroundImage: {
         heroBg: "url('/src/assets/graphics/hero.jpg')",
         heroBg2: "url('/src/assets/graphics/hero2.jpg')",
+        chatBg: "url('/src/assets/graphics/chat.jpg')",
         svg1: "url('/src/assets/graphics/svg1.svg')",
         svg2: "url('/src/assets/graphics/svg2.svg')",
         svg3: "url('/src/assets/graphics/svg3.svg')",

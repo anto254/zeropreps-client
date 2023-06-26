@@ -21,6 +21,10 @@ import Contacts from "./pages/AdminDashboard/Contacts";
 import MyBlogs from "./pages/AdminDashboard/MyBlogs";
 import EditBlog from "./pages/AdminDashboard/EditBlog";
 import MyReviews from "./pages/AdminDashboard/MyReviews";
+import ChatWithUs from "./pages/ChatWithUs";
+import AdminSupport from "./pages/AdminDashboard/AdminSupport";
+import Messages from "./pages/AdminDashboard/Messages";
+import ScrollBlog from "./pages/ScrollBlog";
 
 function App() {
   // Create a client
@@ -28,7 +32,7 @@ function App() {
 
   return (
     // routes
-    <div className="bg-svg3 min-h-screen text-primary">
+    <div className="bg-svg3 min-h-screen text-primary relative  ">
       <ToastContainer
         position="top-right"
         autoClose={5000}
@@ -41,7 +45,8 @@ function App() {
         pauseOnHover
         theme="colored"
       />
-      <QueryClientProvider client={queryClient}>
+        <QueryClientProvider client={queryClient}>
+      <ChatWithUs/>
         <Routes>
           <Route path="/unauthorized" element={<Unauthorized />} />
 
@@ -52,6 +57,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQpage />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/blog/title-of-the-blog" element={<ScrollBlog />} />
           {/* dashboard routes */}
           {/* <Route > */}
 
@@ -67,6 +73,8 @@ function App() {
                 <Route path="my-blogs" element={<MyBlogs />} />
                 <Route path="my-reviews" element={<MyReviews />} />
                 <Route path="edit/:slug" element={<EditBlog />} />
+                <Route path="chats" element={<AdminSupport />} />
+                <Route path="messages/:clientId" element={<Messages />} />
               </Route>
             </Route>
           </Route>

@@ -10,6 +10,7 @@ import PulseLoader from 'react-spinners/PulseLoader'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 import axios from '../api/axios'
 import { Helmet } from 'react-helmet-async';
+import ScrollBlogCard from '../components/ScrollBlogCard';
 
 
 
@@ -59,6 +60,7 @@ function Blogs() {
           </div>
 
         <div className=" flex flex-col md:grid md:grid-cols-4 gap-4 min-h-[400px]">
+          <ScrollBlogCard />
           {
              loadingBlogs? 
                 <div className="flex justify-center  gap-3 items-center">
@@ -73,12 +75,13 @@ function Blogs() {
                 </tr>
                : 
            blogsData?.data?.blogs?.map((blog,index)=>{
+          
             return(
                    <Card key={index} shadow="sm" padding="lg" radius="md"  className="bg-dark border border-secondary flex flex-col gap-2">
               <Card.Section>
                 <img
                   src={`${blog?.img}`}                  
-                  alt="Norway"
+                    alt={blog?.title}
                   className='h-[150px] w-full'
                   loading='lazy'
                 />
@@ -105,6 +108,7 @@ function Blogs() {
            })
 
           }
+
          
           
 

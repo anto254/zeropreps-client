@@ -37,6 +37,10 @@ function Dashboard() {
       path: "my-reviews",
       name: "Reviews",
       icon: <AiFillStar size={20}/>,
+    }, {
+      path: "chats",
+      name: "Messages",
+      icon: <AiFillStar size={20} />,
     },
    
   ];

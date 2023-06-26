@@ -19,6 +19,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import Typed from "react-typed";
 import { Helmet } from "react-helmet-async";
 import StarRating from "../components/StarRating";
+import ScrollBlogCard from "../components/ScrollBlogCard";
 
 function HomePage() {
   // fetch blogs
@@ -26,7 +27,7 @@ function HomePage() {
   const [activePage, setPage] = useState(1);
 
   const fetchBlogs = () => {
-    return axios.get(`/blogs?page=${activePage}&perPage=${perPage}`);
+    return axios.get(`/blogs?page=${activePage}&perPage=${3}`);
   };
 
   const {
@@ -185,6 +186,8 @@ function HomePage() {
           <h1 className="text-lg font-bold my-3">Blogs</h1>
 
           <div className=" flex flex-col md:grid md:grid-cols-4 gap-4 ">
+            <ScrollBlogCard />
+            
             {loadingBlogs ? (
               <div className="flex justify-center  gap-3 items-center">
                 <h1>Loading</h1>
@@ -212,7 +215,7 @@ function HomePage() {
                     <Card.Section>
                       <img
                         src={`${blog?.img}`}
-                        alt="Norway"
+                        alt={blog?.title}
                         className="h-[150px] w-full "
                         loading="lazy"
                       />
@@ -234,7 +237,7 @@ function HomePage() {
                     </Link>
                   </Card>
                 );
-              })
+              }) 
             )}
           </div>
           <div>

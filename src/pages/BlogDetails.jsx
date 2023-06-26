@@ -82,36 +82,36 @@ function BlogDetails() {
                 {blogData?.data?.message}
               </td>
             </tr>
-          ) : 
-           error ? <div>
+          ) :
+            error ? <div>
               <h1 className="text-red-600">Could not load blog try again!</h1>
 
             </div>
-            :
-          
-         (
-            <div className="bg-secondary px-1 ">
-              <div className="">
-                <img src={blogData?.data?.img} alt="" className="w-full  " />
-              </div>
-              <div className="my-4 ">
-                <h1 className="font-semibold text-4xl ">
-                  {blogData?.data?.title}{" "}
-                </h1>
-                <div className="text-gray-400 leading-[1.75] ">
-                  <TypographyStylesProvider>
+              :
 
-                  <div
-                    className="text-white x "
-                    dangerouslySetInnerHTML={{
-                      __html: blogData?.data?.content,
-                    }}
-                  />
-                  </TypographyStylesProvider>
+              (
+                <div className="bg-secondary px-1 ">
+                  <div className="">
+                    <img src={blogData?.data?.img} alt={blogData?.data?.title} className="w-full  " />
+                  </div>
+                  <div className="my-4 ">
+                    <h1 className="font-semibold text-4xl ">
+                      {blogData?.data?.title}{" "}
+                    </h1>
+                    <div className="text-gray-400 leading-[1.75] ">
+                      <TypographyStylesProvider>
+
+                        <div
+                          className="text-white x "
+                          dangerouslySetInnerHTML={{
+                            __html: blogData?.data?.content,
+                          }}
+                        />
+                      </TypographyStylesProvider>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          )}
+              )}
         </main>
 
         {/* side */}
@@ -132,47 +132,47 @@ function BlogDetails() {
                   {blogsData?.data?.message}
                 </td>
               </tr>
-            ) : 
-            (
-              blogsData?.data?.blogs?.map((blog, index) => {
-                if (blog?.slug === slug) {
-                  return null;
-                }
-                return (
-                  <Card
-                    key={index}
-                    shadow="sm"
-                    padding="lg"
-                    radius="md"
-                    className="bg-dark border border-secondary flex flex-col gap-2 my-2"
-                  >
-                    <Card.Section>
-                      <img
-                        src={`${blog?.img}`}
-                        alt="Norway"
-                        className="h-[150px] w-full"
-                        loading="lazy"
-                      />
-                    </Card.Section>
+            ) :
+              (
+                blogsData?.data?.blogs?.map((blog, index) => {
+                  if (blog?.slug === slug) {
+                    return null;
+                  }
+                  return (
+                    <Card
+                      key={index}
+                      shadow="sm"
+                      padding="lg"
+                      radius="md"
+                      className="bg-dark border border-secondary flex flex-col gap-2 my-2"
+                    >
+                      <Card.Section>
+                        <img
+                          src={`${blog?.img}`}
+                          alt={blog?.title}
+                          className="h-[150px] w-full"
+                          loading="lazy"
+                        />
+                      </Card.Section>
 
-                    <Text size="sm" color="#ffd700">
-                      {blog?.title}
-                    </Text>
-                    <Text size="sm" color="dimmed">
-                      {blog?.summary?.substr(0,150) } . . .
-                    </Text>
-                    {/* <div className="content" dangerouslySetInnerHTML={{__html:blog.content}} /> */}
+                      <Text size="sm" color="#ffd700">
+                        {blog?.title}
+                      </Text>
+                      <Text size="sm" color="dimmed">
+                        {blog?.summary?.substr(0, 150)} . . .
+                      </Text>
+                      {/* <div className="content" dangerouslySetInnerHTML={{__html:blog.content}} /> */}
 
-                    <Link to={`/blog/${blog?.slug}`}>
-                      <div onClick={scrollToTop} className="flex  items-center gap-2 cursor-pointer  ">
-                        <h1 className="text-primary ">Read more </h1>
-                        <HiOutlineArrowSmRight color="#ffd700" size={20} />
-                      </div>
-                    </Link>
-                  </Card>
-                );
-              })
-            )}
+                      <Link to={`/blog/${blog?.slug}`}>
+                        <div onClick={scrollToTop} className="flex  items-center gap-2 cursor-pointer  ">
+                          <h1 className="text-primary ">Read more </h1>
+                          <HiOutlineArrowSmRight color="#ffd700" size={20} />
+                        </div>
+                      </Link>
+                    </Card>
+                  );
+                })
+              )}
           </div>
         </aside>
       </div>
