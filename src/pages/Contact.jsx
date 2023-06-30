@@ -53,13 +53,7 @@ function Contact() {
           <h1 className="text-center font-bold my-2">Contact us </h1>
 
           <div className="flex flex-col justify-center items-center   ">
-            <a href="https://t.me/zeropreps" target="_blank" className="flex f px-5 py-2 items-center gap-2 rounded-tr-md rounded-bl-md hover:bg-primary hover:text-[#000016] rounded-sm">
-              <span>
-                <BsTelegram  size={20} />
-              </span>
-              <h1 >Join Telegram</h1>
-            </a>
-
+         
             <form
               onSubmit={handleSubmit(submitMessage)}
               className="min-h-[250px]  px-4 md:px-4 mt-4 bg-secondary shadow-md shadow-indigo-900 w-full md:w-[50%]"

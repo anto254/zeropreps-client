@@ -10,8 +10,13 @@ import axios from "../api/axios";
 import PulseLoader from "react-spinners/PulseLoader";
 import { Helmet } from "react-helmet-async";
 import { TypographyStylesProvider } from '@mantine/core';
+import { BsChatDotsFill } from "react-icons/bs";
+import useAuth from "../hooks/useAuth";
+import CtaBanner from "../components/CtaBanner";
 
 function BlogDetails() {
+  const { auth, setAuth } = useAuth();
+
   const { slug } = useParams();
   //blog data fetching fuction-----------------
   function getBlog() {
@@ -31,6 +36,7 @@ function BlogDetails() {
   const [activePage, setPage] = useState(1);
 
   const fetchBlogs = () => {
+
     return axios.get(`/blogs?page=${activePage}&perPage=${perPage}`);
   };
 
@@ -98,6 +104,9 @@ function BlogDetails() {
                     <h1 className="font-semibold text-4xl ">
                       {blogData?.data?.title}{" "}
                     </h1>
+                    <div>
+                        <CtaBanner/>
+                    </div>
                     <div className="text-gray-400 leading-[1.75] ">
                       <TypographyStylesProvider>
 

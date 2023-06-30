@@ -68,7 +68,6 @@ function Conversation(props) {
         error,
     } = useMutation(uploadMessage, {
         onSuccess: (response) => {
-            toast.success(response?.data?.message);
             // queryClient.invalidateQueries([`messages--`]);
 
             reset();
@@ -149,7 +148,9 @@ function Conversation(props) {
                             className="mt-1 py-2 px-3    block text-dark w-full rounded-md bg-white border border-gray-300 shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                         ></input>
 
-                        <button className="bg-primary text-dark py-2 px-4 rounded-md hover:bg-secondary hover:text-light ">
+                        <button
+                            disabled={messageLoading}
+                        className="bg-primary text-dark py-2 px-4 rounded-md disabled:bg-gray-500  hover:bg-secondary hover:text-light ">
                             Send
                         </button>
                     </div>

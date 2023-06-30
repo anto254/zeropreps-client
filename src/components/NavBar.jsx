@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import { MdMenu, MdClose } from "react-icons/md";
 import Logo from "../assets/graphics/logo.jpg";
 import { Link, NavLink } from "react-router-dom";
-import { FaTelegramPlane } from "react-icons/fa";
+import { BsChatDotsFill } from "react-icons/bs";
+import useAuth from "../hooks/useAuth";
 
 function NavBar() {
   const [mobileMenu, setMobileMenu] = useState(false);
 
   const [scrolled, setScrolled] = useState(false);
+  const {auth, setAuth} = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,12 +53,12 @@ function NavBar() {
     <div className={`fixed top-0 right-0 left-0  z-10 bg-opacity-70 `}>
       <div className={`flex justify-between md:justify-between md:gap-[90px] items-center px-1  md:px-[100px] py-3 ${scrolled ? 'bg-[#000016] bg-opacity-80' : 'bg-opacity-0'} `}>
         <Link to='/'>
-        <div className="font-bold text-xl flex  justify-center items-center gap-1 text-primary">
-          <img src={Logo} alt="logo" className='w-[50px] h-[50px] ' />
-          <h1>
-            ZEROPREPS
-          </h1>
-        </div>
+          <div className="font-bold text-xl flex  justify-center items-center gap-1 text-primary">
+            <img src={Logo} alt="logo" className='w-[50px] h-[50px] ' />
+            <h1>
+              ZEROPREPS
+            </h1>
+          </div>
 
         </Link>
         <div className="mr-[]  ">
@@ -76,14 +78,17 @@ function NavBar() {
           </ul>
         </div>
         <div className="flex flex-row-reverse  items-center gap-3 cursor-pointer">
-        <a href="https://t.me/zeropreps" target="_blank">
-        <button className="bg-blue-500 flex items-center hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-          <FaTelegramPlane className="inline-block mr-2" />
-          <p className="hidden md:flex">
-            Telegram
-          </p>
-        </button>
-      </a>
+            <button className="bg-blue-500 flex justify-center items-center hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+              onClick={() => {
+                setAuth({ liveChat: !auth?.liveChat })
+
+              }}
+            >
+              <BsChatDotsFill className="inline-block mr-2" />
+              <p className="hidden md:flex">
+                Live Chat
+              </p>
+            </button>
         </div>
         <div className="lg:hidden">
           {mobileMenu ? (

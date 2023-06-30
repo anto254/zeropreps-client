@@ -1,18 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import chatIcon from '../assets/graphics/chat-icon.png';
 import { useLocation } from 'react-router-dom';
 import Conversation from './Conversation';
 import { IoCloseSharp } from 'react-icons/io5';
+import useAuth from '../hooks/useAuth';
 
 function ChatWithUs() {
     const [isChatOpen, setIsChatOpen] = useState(false);
+    const {auth,setAuth} = useAuth();
     const location = useLocation();
     const { pathname } = location;
 
     const toggleChat = () => {
-        setIsChatOpen(!isChatOpen);
+        console.log("authhhhhhhhhh",auth)
+        setAuth({ liveChat: !auth?.liveChat });
     };
+
+    useEffect(()=>{
+        setIsChatOpen(auth?.liveChat)
+
+    },[auth?.liveChat])
 
     return (
         <div className={`right-3 bottom-4 fixed cursor-pointer z-50 ${pathname.includes('dashboard') && 'hidden'}`}>

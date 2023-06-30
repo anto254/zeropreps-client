@@ -12,13 +12,12 @@ import { Helmet } from "react-helmet-async";
 import { TypographyStylesProvider } from '@mantine/core';
 import cardImage from '../assets/graphics/hero4.avif'
 import { Link as LinkS } from "react-scroll";
+import useAuth from '../hooks/useAuth'
 
 
 
 function ScrollBlog() {
     const [openLinks, setopenLinks] = useState(true);
-
-
     //  fetchind side related blogs
     const [perPage, setPerPage] = useState(7);
     const [activePage, setPage] = useState(1);
@@ -46,7 +45,7 @@ function ScrollBlog() {
     //     window.scrollTo(0, 0);
     // }, []);
 
-
+const {setAuth,auth} = useAuth();
 
 
     return (
