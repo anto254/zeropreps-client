@@ -1,14 +1,34 @@
 import React, { useState, useEffect } from "react";
 import { FaBars, FaUserAlt, FaCartArrowDown, FaQuestionCircle } from "react-icons/fa";
-
-
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import { AiOutlineClose, AiOutlineMessage} from "react-icons/ai";
 import {MdOutlinePostAdd,MdReviews} from 'react-icons/md'
 import {AiFillStar,} from 'react-icons/ai';
+import { BiSupport, BiMessageRoundedDots } from 'react-icons/bi';
+import useAuth from "../../hooks/useAuth";
+import { useQuery } from "@tanstack/react-query";
+import { Indicator } from "@mantine/core";
+import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 
 function Dashboard() {
   const email = localStorage.getItem('email');
+  const {auth} = useAuth();
+  const axios = useAxiosPrivate();
+  // get unread messages
+  const fetchSupportCount = () => {
+    return axios.get(`/chat/unread/count`);
+  };
+
+  const { isLoading: loadingSupports, data: supportData } = useQuery(
+    [`supportcount-`],
+    fetchSupportCount,
+    {
+      refetchOnWindowFocus: true,
+      keepPreviousData: true,
+      staleTime: 5000, // data can remain stale for 5 seconds
+      refetchInterval: 5000 // refetch every 5 seconds
+    }
+  );
 
   const [isOpen, setIsOpen] = useState(true);
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -40,7 +60,7 @@ function Dashboard() {
     }, {
       path: "chats",
       name: "Messages",
-      icon: <AiFillStar size={20} />,
+      icon: <BiMessageRoundedDots size={20} />,
     },
    
   ];
@@ -97,14 +117,30 @@ function Dashboard() {
           <hr className="w-full border-1 mb-4  border-primary md:hidden" />
         <div className="flex gap-2 justify-end">
          
-          <div className=" pr-10 flex gap-1 hover:cursor-pointer">
-            <p className="hidden sm:flex">Admin</p>
+          <div className=" pr-10 flex gap-3 hover:cursor-pointer">
+            <div className="pr-4 pt-[1px] " title="Support">
+              <Link to={"/dashboard/chats"}>
+                {supportData?.data?.totalAdminUnread > 0 ? (
+                  <Indicator
+                    inline
+                    label={supportData?.data?.totalAdminUnread}
+                    size={16}
+                  >
+                    <BiSupport size={23} />
+                  </Indicator>
+                ) : (
+                  <BiSupport size={23} />
+                )}
+              </Link>
+            </div>
+
+            <p className="hidden sm:flex">{auth?.userName}</p>
           </div>
         </div>
       </div>
 
       {/* main content*/}
-      <div className="flex h-[100vh]  pt-[100px] md:pt-[85px] overflow-hidden">
+      <div className="flex h-[100vh]  pt-[150px] md:pt-[85px] overflow-hidden">
         <div
           style={{ width: isOpen ? "260px" : "50px" }}
           className="hidden md:flex flex-col bg-secondary  h-[screen] overflow-y-auto w-[260px] ease-in-0ut duration-500 "
@@ -145,7 +181,7 @@ function Dashboard() {
         <div
          className={
           mobileMenu
-            ? 'absolute top-[108px] ease-in-out duration-500 h-screen text-light flex flex-col bg-secondary w-[100%] py-6 md:hidden'
+            ? 'absolute top-[108px] ease-in-out duration-500 h-screen text-light z-50 flex flex-col bg-secondary w-[100%] py-6 md:hidden'
             : ' absolute left-[-100%] '
         }
         >
@@ -165,7 +201,7 @@ function Dashboard() {
             </NavLink>
           ))}
         </div>
-        <main className="w-full  bg-dark h-[100vh] my-0 px-0 md:px-0 overflow-y-scroll pb-[200px]">
+        <main className="w-full  bg-dark h-[100vh] my-0 px-0 md:px-0 overflow-y-scroll pb-[]">
           <Outlet />
         </main>
       </div>

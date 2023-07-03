@@ -72,7 +72,7 @@ function Messages() {
   });
 
   const submitMessage = (data) => {
-    data.clientId = clientId;
+    data.clientId = clientId; 
     data.senderId = auth?.userId;
     messageMutate(data);
   };
@@ -83,18 +83,18 @@ function Messages() {
   }, [sent, conversationData?.data?.messages?.length]);
  
   return (
-    <div className="bg ">
+    <div className="bg mx-3 my-16 md:my-0">
       <div className="max-w-7xl mx-auto py-12 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-3xl font-bold text-gray-800 mb-4">
+          {/* <h1 className="text-3xl font-bold text-gray-100 my-8">
              {conversationData?.data?.clientId}
-          </h1>
+          </h1> */}
 
           <div className=" min-h-[500px] bg-chatBg max-h-[500px] rounded no-scrollbar border  overflow-y-auto overflow-x-auto ">
             {
               conversationData?.data?.messages?.map((message, index) => {
                 return(
-                  <div ref={scroll} className={message.senderId === auth?.userId ?"m-2  bg-[#379237] p-1 rounded-md  text-white w-[50%] float-right  "  : "text-white float-left bg-gray-800 w-[50%] m-2  p-1 rounded-md "}  key={index}>
+                  <div ref={scroll} className={message.senderId === auth?.userId ?"m-2  bg-[#379237] p-1 rounded-md  text-white w-[60%] float-right  "  : "text-white float-left bg-gray-800 w-[60%] m-2  p-1 rounded-md "}  key={index}>
                       <p className='p-2'>
                           {message?.message}
                       </p>
@@ -110,7 +110,7 @@ function Messages() {
           
           <form
             onSubmit={handleSubmit(submitMessage)}
-            className="grid grid-cols-1 gap-6"
+            className="grid grid-cols-1 gap-6 "
           >
            
             <div>

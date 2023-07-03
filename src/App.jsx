@@ -25,6 +25,10 @@ import ChatWithUs from "./pages/ChatWithUs";
 import AdminSupport from "./pages/AdminDashboard/AdminSupport";
 import Messages from "./pages/AdminDashboard/Messages";
 import ScrollBlog from "./pages/ScrollBlog";
+import CanYouCheatProctoru from "./pages/Static-blogs/CanYouCheatProctoru";
+import HowToCheatProctoru from "./pages/Static-blogs/HowToCheatProctoru";
+import CanProctoruSeeMyScreen from "./pages/Static-blogs/CanProctoruSeeMyScreen";
+import CanProctoruDetectPhones from "./pages/Static-blogs/CanProctoruDetectPhones";
 
 function App() {
   // Create a client
@@ -58,6 +62,10 @@ function App() {
           <Route path="/faq" element={<FAQpage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/blog/title-of-the-blog" element={<ScrollBlog />} />
+          <Route path="/blog/can-you-cheat-on-proctoru-understanding-the-proctoru-experience-your-questions-answered" element={<CanYouCheatProctoru />} />
+          <Route path="/blog/how-to-cheat-on-proctoru" element={<HowToCheatProctoru />} />
+          <Route path="/blog/can-proctoru-see-my-screen" element={<CanProctoruSeeMyScreen />} />
+          <Route path="/blog/can-proctoru-detect-phones" element={<CanProctoruDetectPhones />} />
           {/* dashboard routes */}
           {/* <Route > */}
 

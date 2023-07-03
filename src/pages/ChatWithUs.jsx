@@ -5,15 +5,72 @@ import { useLocation } from 'react-router-dom';
 import Conversation from './Conversation';
 import { IoCloseSharp } from 'react-icons/io5';
 import useAuth from '../hooks/useAuth';
+import useAxiosPrivate from '../hooks/useAxiosPrivate';
+import { useQuery } from '@tanstack/react-query';
+import { toast } from 'react-toastify';
 
 function ChatWithUs() {
     const [isChatOpen, setIsChatOpen] = useState(false);
     const {auth,setAuth} = useAuth();
     const location = useLocation();
     const { pathname } = location;
+    const axios = useAxiosPrivate();
+  
 
+   
+    // function to generate 
+    function generateRandomString(length) {
+        var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var result = "";
+        for (var i = 0; i < length; i++) {
+            var randomIndex = Math.floor(Math.random() * characters.length);
+            result += characters.charAt(randomIndex);
+        }
+        return result;
+    }
+
+    const [clientIdFromStorage, setclientIdFromStorage] = useState('');
+
+    // get chat
+    const fetchChat = () => {
+        return axios.get(`/chat/${clientIdFromStorage}`)
+    }
+
+    const { isLoading: loadingChat, data: chatData, } = useQuery(
+        [`chat-${clientIdFromStorage}`, clientIdFromStorage],
+        fetchChat,
+        {
+            keepPreviousData: true,
+            enabled: !!clientIdFromStorage,
+            refetchInterval: 1000,
+        },
+    )
+
+
+    useEffect(() => {
+        if (!auth?.liveChat) {
+            setAuth({ liveChat: true });
+            toast.info("You have a new message!")
+        }
+
+    }, [chatData?.data?.messages?.length])
+
+
+    useEffect(() => {
+        if (!localStorage.getItem("clientId")) {
+            localStorage.setItem("clientId", generateRandomString(20));
+        }
+
+        setclientIdFromStorage(localStorage.getItem("clientId"));
+    }, [localStorage.getItem("clientId")])
+
+
+
+    
+    
+    
+    
     const toggleChat = () => {
-        console.log("authhhhhhhhhh",auth)
         setAuth({ liveChat: !auth?.liveChat });
     };
 
@@ -23,7 +80,7 @@ function ChatWithUs() {
     },[auth?.liveChat])
 
     return (
-        <div className={`right-3 bottom-4 fixed cursor-pointer z-50 ${pathname.includes('dashboard') && 'hidden'}`}>
+        <div className={`right-3 bottom-4 fixed cursor-pointer z-50 ${(pathname.includes('dashboard') || pathname.includes('login')) && 'hidden'}`}>
             <div>
                 {!isChatOpen && (
                     <button
@@ -35,7 +92,7 @@ function ChatWithUs() {
                 )}
 
                 {isChatOpen && (
-                    <div className="fixed bottom-8 right-8 w-64 sm:w-[350px] h-[470px] bg-white rounded-lg shadow-lg z-10 transition-all duration-300 ease-in-out">
+                    <div className="fixed bottom-8 right-4 w-[90%] md:w-[350px] h-[500px] bg-white rounded-lg shadow-lg z-10 transition-all duration-300 ease-in-out">
                         <button
                             className="absolute top-6 right-3 w-6 h-6 text-gray-600 hover:text-gray-800"
                             onClick={toggleChat}
@@ -48,7 +105,7 @@ function ChatWithUs() {
                         </div>
 
                         {/* Your chat content goes here */}
-                        <Conversation />
+                        <Conversation messages = {chatData?.data?.messages} clientId = {clientIdFromStorage} />
                     </div>
                 )}
 

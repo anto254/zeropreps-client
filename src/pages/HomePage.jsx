@@ -20,6 +20,11 @@ import Typed from "react-typed";
 import { Helmet } from "react-helmet-async";
 import StarRating from "../components/StarRating";
 import ScrollBlogCard from "../components/ScrollBlogCard";
+import CanYouCheatProctoruCard from "./static-blog-cards/CanYouCheatProctoruCard";
+import HowToCheatProctoruCard from "./static-blog-cards/HowToCheatProctoruCard";
+import CanProctoruSeeMyScreen from "./Static-blogs/CanProctoruSeeMyScreen";
+import CanProctoruSeeMyScreenCard from "./static-blog-cards/CanProctoruSeeMyScreenCard";
+import CanProctorUDetectPhonesCard from "./static-blog-cards/CanProctorUDetectPhonesCard";
 
 function HomePage() {
   // fetch blogs
@@ -27,7 +32,7 @@ function HomePage() {
   const [activePage, setPage] = useState(1);
 
   const fetchBlogs = () => {
-    return axios.get(`/blogs?page=${activePage}&perPage=${3}`);
+    return axios.get(`/blogs?page=${activePage}&perPage=${1}`);
   };
 
   const {
@@ -186,59 +191,12 @@ function HomePage() {
           <h1 className="text-lg font-bold my-3">Blogs</h1>
 
           <div className=" flex flex-col md:grid md:grid-cols-4 gap-4 ">
-            <ScrollBlogCard />
+            <CanYouCheatProctoruCard />
+            <HowToCheatProctoruCard/>
+            <CanProctoruSeeMyScreenCard/>
+            <CanProctorUDetectPhonesCard/>
             
-            {loadingBlogs ? (
-              <div className="flex justify-center  gap-3 items-center">
-                <h1>Loading</h1>
-                <p colSpan={10} className="text-center pt-2">
-                  {" "}
-                  <PulseLoader color="#ffd700" size={10} />
-                </p>
-              </div>
-            ) : blogsData?.data?.message ? (
-              <tr>
-                <td colSpan={7} className="text-gray-800 text-center py-3">
-                  {blogsData?.data?.message}
-                </td>
-              </tr>
-            ) : (
-              blogsData?.data?.blogs?.map((blog, index) => {
-                return (
-                  <Card
-                    key={index}
-                    shadow="sm"
-                    padding="lg"
-                    radius="md"
-                    className="bg-dark border h-[400px] border-secondary flex flex-col gap-2"
-                  >
-                    <Card.Section>
-                      <img
-                        src={`${blog?.img}`}
-                        alt={blog?.title}
-                        className="h-[150px] w-full "
-                        loading="lazy"
-                      />
-                    </Card.Section>
-
-                    <Text size="sm" color="#ffd700">
-                      {blog?.title}
-                    </Text>
-                    <Text size="sm" color="dimmed">
-                      {blog?.summary.substr(0, 200)} ...
-                    </Text>
-                    {/* <div className="content" dangerouslySetInnerHTML={{__html:blog.content}} /> */}
-
-                    <Link to={`/blog/${blog?.slug}`}>
-                      <div className="flex  items-center gap-2 cursor-pointer  ">
-                        <h1 className="text-primary ">Read more </h1>
-                        <HiOutlineArrowSmRight color="#ffd700" size={20} />
-                      </div>
-                    </Link>
-                  </Card>
-                );
-              }) 
-            )}
+          
           </div>
           <div>
             <Link to="/blogs">
@@ -306,12 +264,7 @@ function HomePage() {
           <h1 className="text-center font-bold my-2">Contact us </h1>
 
           <div className="flex flex-col justify-center items-center   ">
-            <a href="https://t.me/zeropreps" target="_blank">
-              <button className="bg-blue-500 flex items-center hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-                <FaTelegramPlane className="inline-block mr-2" />
-                <p className="hidden md:flex">Chat on Telegram</p>
-              </button>
-            </a>
+           
 
             <form
               onSubmit={handleSubmit(submitMessage)}

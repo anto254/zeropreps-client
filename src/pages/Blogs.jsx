@@ -11,6 +11,10 @@ import { useQuery, useQueryClient } from '@tanstack/react-query'
 import axios from '../api/axios'
 import { Helmet } from 'react-helmet-async';
 import ScrollBlogCard from '../components/ScrollBlogCard';
+import CanYouCheatProctoruCard from './static-blog-cards/CanYouCheatProctoruCard';
+import HowToCheatProctoruCard from './static-blog-cards/HowToCheatProctoruCard';
+import CanProctoruSeeMyScreenCard from './static-blog-cards/CanProctoruSeeMyScreenCard';
+import CanProctorUDetectPhonesCard from './static-blog-cards/CanProctorUDetectPhonesCard';
 
 
 
@@ -60,7 +64,11 @@ function Blogs() {
           </div>
 
         <div className=" flex flex-col md:grid md:grid-cols-4 gap-4 min-h-[400px]">
-          <ScrollBlogCard />
+          <CanYouCheatProctoruCard />
+          <HowToCheatProctoruCard />
+          <CanProctoruSeeMyScreenCard />
+          <CanProctorUDetectPhonesCard />
+
           {
              loadingBlogs? 
                 <div className="flex justify-center  gap-3 items-center">

@@ -7,11 +7,13 @@ import useAxiosPrivate from "../hooks/useAxiosPrivate";
 import { useEffect } from "react";
 import { useRef } from "react";
 import { useState } from "react";
+import useAuth from "../hooks/useAuth";
 
-function Conversation(props) {
+function Conversation({messages, clientId}) {
     const axios = useAxiosPrivate();
     const scroll = useRef();
     const [sent, setSent] = useState("");
+    const {auth, setAuth} = useAuth();
 
     const {
         register,
@@ -19,43 +21,7 @@ function Conversation(props) {
         formState: { errors },
         reset,
     } = useForm();
-    // function to generate 
-    function generateRandomString(length) {
-        var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        var result = "";
-        for (var i = 0; i < length; i++) {
-            var randomIndex = Math.floor(Math.random() * characters.length);
-            result += characters.charAt(randomIndex);
-        }
-        return result;
-    }
- 
-    const [clientIdFromStorage, setclientIdFromStorage] = useState('');
-
-    // get chat
-    const fetchChat = () => {
-        return axios.get(`/chat/${clientIdFromStorage}`)
-    }
-
-    const { isLoading: loadingChat, data: chatData,  } = useQuery(
-        [`chat-${clientIdFromStorage}`, clientIdFromStorage ],
-        fetchChat,
-        {
-            keepPreviousData: true,
-            enabled: !!clientIdFromStorage,
-            refetchInterval: 1000,
-        },
-    )
-
-    useEffect(()=>{
-        if(!localStorage.getItem("clientId")){
-            localStorage.setItem("clientId", generateRandomString(20));
-        }
-        
-        setclientIdFromStorage(localStorage.getItem("clientId"));
-    }, [localStorage.getItem("clientId")])
-
-
+    
 
     // upload function
     const uploadMessage = (message) => {
@@ -83,39 +49,39 @@ function Conversation(props) {
     });
 
     const submitMessage = (data) => {
-        data.clientId = clientIdFromStorage;
-        data.senderId = clientIdFromStorage;
+        data.clientId = clientId;
+        data.senderId = clientId;
         setSent(data.message);
         messageMutate(data);
     };
-
+ 
     // Always scroll to last Message
     useEffect(() => {
         scroll.current?.scrollIntoView({ behavior: "smooth" });
-    }, [sent, chatData?.data?.messages?.length ]);
 
-  
+    }, [sent, messages?.length ]);
+
 
     return (
         <div>
             
-            <div className="px-4 py-4 ">
-                <div className=" min-h-[300px] bg-chatBg no-scrollbar  max-h-[300px] border-3 border-dotted overflow-y-auto -auto ">
-                    {
-                        chatData?.data?.message ? 
-                        <div className="text-center text-dark ">
-                            <h1>Hi there 👋</h1>
-                            <p>We're ready to help you</p>
+            <div className="flex flex-col justify-between ">
+                <div className=" min-h-[350px] bg-chatBg no-scrollbar  max-h-[300px] border-3 border-dotted overflow-y-auto -auto ">
+                    <div className="text-white float-left bg-gray-800 w-[70%] m-2  px-2 py-1 rounded-md ">
+                        <h1>Hi there 👋</h1>
+                        <p>We're ready to help you</p>
 
-                        </div>
-                        :
-                    
-                    chatData?.data?.messages?.map((message, index) => {
+                    </div>
+                    {
+                                                                    
+                    messages?.map((message, index) => {
                         return (
+                            <div className="">                           
+
                             <div
                                 ref={scroll}
                                 className={
-                                    message.senderId === clientIdFromStorage
+                                    message.senderId === clientId
                                         ? "m-2 py-1 bg-[#379237] px-2 rounded-md  text-white w-[70%] float-right  "
                                         : "text-white float-left bg-gray-800 w-[70%] m-2  px-2 py-1 rounded-md "
                                 }
@@ -127,6 +93,7 @@ function Conversation(props) {
                                 </h1>
                                 <h1 className="text-[15px] text-right"> </h1>
                             </div>
+                            </div>
                         );
                     })}
                 </div>
@@ -135,12 +102,12 @@ function Conversation(props) {
                     className="grid grid-cols-1 gap-6 "
                 >
                    
-                    <div className="flex gap-2 items-center mt-2">
+                    <div className="flex gap-2 items-center mt-2 px-2">
                         <input
                             placeholder="Type message"
                             id="message"
                             name="message"
-                            autoFocus
+
                             rows="1"
                             {...register("message", {
                                 required: true,
