@@ -121,24 +121,12 @@ function HomePage() {
                 about online proctored exams.
               </p>
               <div className="py-5  flex justify-center md:justify-start items-center gap-6">
-                <div className="flex flex-row-reverse  items-center gap-3 cursor-pointer px-4 py-2  ">
-                  <a href="https://t.me/zeropreps" target="_blank">
-                    <button className="bg-blue-500 flex items-center hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-                      <FaTelegramPlane className="inline-block mr-2" />
-                      <p className="hidden md:flex">Telegram</p>
-                    </button>
-                  </a>
-                 
-                </div>
+                <Link to={"/contact"}>
+                <button className="border border-primary flex items-center  text-white font-bold py-2 px-4 ">
+                    Contact Us                  
+                </button> 
+                </Link>
 
-                <a target="_blank" href="https://wa.me/+1(304) 996-3137">
-                  <button className="bg-green-500 flex items-center hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
-                    <FaWhatsapp className="flex mr-2" />
-                    <p className="hidden md:flex">
-                   WhatsApp
-                    </p>
-                  </button>
-                </a>
               </div>
               <div className="pt-8 flex justify-center md:justify-end">
                 <LinkS

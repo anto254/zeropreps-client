@@ -68,8 +68,7 @@ function Conversation({messages, clientId}) {
             <div className="flex flex-col justify-between ">
                 <div className=" min-h-[350px] bg-chatBg no-scrollbar  max-h-[300px] border-3 border-dotted overflow-y-auto -auto ">
                     <div className="text-white float-left bg-gray-800 w-[70%] m-2  px-2 py-1 rounded-md ">
-                        <h1>Hi there 👋</h1>
-                        <p>We're ready to help you</p>
+                        <p>Hi, Welcome to Zeropreps. Need help with your ProctorU exan? You are in the right place.</p>
 
                     </div>
                     {
