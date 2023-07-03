@@ -11,6 +11,7 @@ import PulseLoader from "react-spinners/PulseLoader";
 import { Helmet } from "react-helmet-async";
 import { Link as LinkS } from "react-scroll";
 import article4 from "../../assets/graphics/article4.jpg";
+import { useEffect } from "react";
 
 function CanProctoruDetectPhones() {
     const [openLinks, setopenLinks] = useState(true);
@@ -37,9 +38,9 @@ function CanProctoruDetectPhones() {
         });
     }
 
-    // useEffect(() => {
-    //     window.scrollTo(0, 0);
-    // }, []);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <div>
