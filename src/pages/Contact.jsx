@@ -51,6 +51,13 @@ function Contact() {
       <div className="pt-[90px] min-h-screen ">
         <div className="py-5" id="contact ">
           <h1 className="text-center font-bold my-2">Contact us </h1>
+          <h1 className="text-center">or</h1>
+          <div className="flex gap-2 justify-center items-center ">
+            <span className="text-light">
+              Email us at:
+            </span>
+            <a href="mailto:support@zeropreps.com" target="_blank" >support@zeropreps.com</a>
+          </div>
 
           <div className="flex flex-col justify-center items-center   ">
          

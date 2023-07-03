@@ -9,7 +9,9 @@ function Footer() {
   const { auth, setAuth } = useAuth();
 
   return (
-    <div className="bg-[#06060a] h-[100px] flex gap-3 md:gap-20 justify-center overflow-x-auto items-center px-10 py-2 md:px-[100px]">
+    <div className="bg-[#06060a] h-[100px] flex flex-col md:flex-row gap-3 md:gap-20 justify-center overflow-x-auto items-center px-10 py-2 md:px-[100px]">
+      <div className="flex gap-4">
+
       <div className="flex items-center gap-3">
         <h1>ZEROPREPS</h1>
         <h1>&copy; </h1>
@@ -29,6 +31,13 @@ function Footer() {
           </p>
         </button>
       
+      </div>
+      </div>
+      <div className="flex gap-2 justify-center items-center ">
+        <span className="text-light">
+          Email us at:
+        </span>
+        <a href="mailto:support@zeropreps.com" target="_blank" >support@zeropreps.com</a>
       </div>
     </div>
   );
