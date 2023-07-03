@@ -22,12 +22,15 @@ function CanProctorUDetectPhonesCard() {
                         loading="lazy"
                     />
                 </Card.Section>
+                <Link to={`/blog/can-proctoru-detect-phones`} >
 
                 <Text size="sm" color="#ffd700">
                     <h1>Can ProctorU Detect Phones?</h1>
                 </Text>
+                
+                </Link>
                 <Text size="sm" color="dimmed">
-                    With the increase in online learning and the prevalence of cheating nowadays, proctoring companies have come up with sophisticated ways to curb the vice. One of these companies, ProctorU, employs various methods to prevent cheating incidents. 
+                    With the increase in online learning and the prevalence of cheating nowadays, proctoring companies have come up with sophisticated ways to curb the vice. One of these companies, ProctorU, employs various methods...
                 </Text>
 
                 <Link to={`/blog/can-proctoru-detect-phones`}>

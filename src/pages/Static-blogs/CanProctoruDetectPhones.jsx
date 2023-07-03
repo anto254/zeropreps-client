@@ -102,7 +102,7 @@ function CanProctoruDetectPhones() {
                                     <CtaBanner />
                                     <br />
                                     <p>
-                                        In one of our articles, ‘how to cheat on ProctorU exams’, we
+                                        In one of our articles, <a href="https://zeropreps.com/blog/how-to-cheat-on-proctoru" target="_blank" className="text-blue-500">‘how to cheat on ProctorU exams’</a> , we
                                         have discussed how students can exploit the use of cell
                                         phones and Artificial Intelligence language models like
                                         ChatGPT to cheat on exams. It has come to light that {" "} 
@@ -553,7 +553,7 @@ function CanProctoruDetectPhones() {
                                     <p>Yes, mobile hotspots can work the same as regular wifi connections, however, it is important to do an internet speed test on ProctorU and ensure that you pass it so that you don’t face technical difficulties during the exam. </p>
                                     <br />
                                     <p>To pass the internet speed test on ProctorU, the minimum download speed is 1024 kbps while the minimum upload speed is also 1024 kb</p>
-                                    <br />\
+                                    <br />
                                     <p>It is also good to note that cellular internet may be interrupted if your phone receives normal calls while taking the exam which may lead to disconnection. For this reason, regular wifi connections may be the best to use while taking  an online proctored exam.</p>
                                     <br />
                                     <h1 id="Does ProctorU grade exams?" className="font-bold text-xl text-primary">

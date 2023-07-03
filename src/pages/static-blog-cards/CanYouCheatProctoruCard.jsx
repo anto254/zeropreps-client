@@ -22,12 +22,14 @@ function CanYouCheatProctoruCard() {
                         loading="lazy"
                     />
                 </Card.Section>
-
-                <Text size="sm" color="#ffd700">
+                <Link  to={`/blog/can-you-cheat-on-proctoru-understanding-the-proctoru-experience-your-questions-answered`}>
+                
+                    <Text size="sm" color="#ffd700" className=''>
                     <h1>Can You Cheat on ProctorU? Understanding the ProctorU Experience: Your Questions Answered</h1>
                 </Text>
+                </Link>
                 <Text size="sm" color="dimmed">
-                    The world of proctoring can give rise to a multitude of questions, spanning from concerns about privacy and technical aspects to the overall examination experience. Addressing these inquiries with informative and ...
+                    The world of proctoring can give rise to a multitude of questions, spanning from concerns about privacy and technical aspects to the overall examination experience. ...
                 </Text>
 
                 <Link to={`/blog/can-you-cheat-on-proctoru-understanding-the-proctoru-experience-your-questions-answered`}>

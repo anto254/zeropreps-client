@@ -121,6 +121,10 @@ function Blogs() {
           
 
         </div>
+        <div className=' my-3 '>
+          <Pagination value={activePage} onChange={setPage} color="yellow" defaultValue={1} total={totalPages} className="text-light py-1 bg-gray-600 px-2 rounded-md w-[300px]"
+          />
+        </div>
        
         </div> 
 

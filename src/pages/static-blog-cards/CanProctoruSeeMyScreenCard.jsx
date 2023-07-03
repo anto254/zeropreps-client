@@ -22,12 +22,16 @@ function CanProctoruSeeMyScreenCard() {
                         loading="lazy"
                     />
                 </Card.Section>
-
+                <Link to={`/blog/can-proctoru-see-my-screen`} >
                 <Text size="sm" color="#ffd700">
                     <h1>Can ProctorU See My Screen?</h1>
                 </Text>
+                </Link>
+
+               
+                
                 <Text size="sm" color="dimmed">
-                    As an integral part of online proctoring for exams, ProctorU requires screen sharing to be enabled. This allows them to monitor the test-taker's activities throughout the duration of the exam. Consequently, the proctors are able to see your screen and ensure the integrity of the exam process.
+                    As an integral part of online proctoring for exams, ProctorU requires screen sharing to be enabled. This allows them to monitor the test-taker's activities throughout the duration of the exam. 
                     </Text>
 
                 <Link to={`/blog/can-proctoru-see-my-screen`}>

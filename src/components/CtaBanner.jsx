@@ -9,7 +9,7 @@ const CtaBanner = () => {
     return (
         <div className="bg-blue-500 py-4 my-5 px-3 rounded-lg">
             <div className="container mx-auto flex items-center justify-between">
-                <p className="text-white text-lg">Need help? Chat with us!</p>
+                <p className="text-white text-lg">Need help with your ProctorU exam? Chat with us!</p>
                 <button className="bg-blue-900 flex justify-center items-center hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
                     onClick={() => {
                         setAuth({ liveChat: !auth?.liveChat })

@@ -22,10 +22,12 @@ function HowToCheatProctoruCard() {
                         loading="lazy"
                     />
                 </Card.Section>
-
+                <Link to={`/blog/how-to-cheat-on-proctoru`}>
+                
                 <Text size="sm" color="#ffd700">
                     <h1>How To Cheat On ProctorU</h1>
                 </Text>
+                </Link>
                 <Text size="sm" color="dimmed">
                      There are many methods you can use to cheat on ProctorU exams. All you need is a little practice on the method you want to use and some research. However, it's important to note that getting caught can have serious consequences                </Text>
 
