@@ -12,6 +12,7 @@ import { Helmet } from "react-helmet-async";
 import { Link as LinkS } from "react-scroll";
 import article4 from "../../assets/graphics/article4.jpg";
 import { useEffect } from "react";
+import CtaBanner from '../../components/CtaBanner'
 
 function CanProctoruDetectPhones() {
     const [openLinks, setopenLinks] = useState(true);
@@ -97,6 +98,8 @@ function CanProctoruDetectPhones() {
                                         positioned out of sight, making it difficult for proctors to
                                         identify when students are using them.
                                     </p>
+                                    <br />
+                                    <CtaBanner />
                                     <br />
                                     <p>
                                         In one of our articles, ‘how to cheat on ProctorU exams’, we

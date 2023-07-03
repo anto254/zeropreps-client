@@ -11,6 +11,8 @@ import PulseLoader from "react-spinners/PulseLoader";
 import { Helmet } from "react-helmet-async";
 import { Link as LinkS } from "react-scroll";
 import article3 from "../../assets/graphics/article3.jpg";
+import CtaBanner from '../../components/CtaBanner'
+
 
 function CanProctoruSeeMyScreen() {
     const [openLinks, setopenLinks] = useState(true);
@@ -88,6 +90,8 @@ function CanProctoruSeeMyScreen() {
                                         test-taker's screen activities throughout the duration of
                                         the exam.
                                     </p>
+                                    <br />
+                                    <CtaBanner />
                                     <br />
                                     <p>
                                         Screen sharing is an integral part of online proctored

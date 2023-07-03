@@ -11,7 +11,7 @@ import PulseLoader from "react-spinners/PulseLoader";
 import { Helmet } from "react-helmet-async";
 import { Link as LinkS } from "react-scroll";
 import article1 from '../../assets/graphics/article2.jpg'
-
+import CtaBanner from '../../components/CtaBanner'
 
 
 function CanYouCheatProctoru() {
@@ -125,6 +125,8 @@ function CanYouCheatProctoru() {
                                             <p>
                                                 We can help you with the setup, although there is full documentation and everything you need available on their <a href="https://www.ventoy.net/" target="_blank" className="text-blue-500"></a> . Ventoy is unlike other virtualization tools, and we were able to test it. We can confidently say that you don't need to be tech-savvy to use it. Although our service is very different from what the Ventoy tool can achieve in terms of bypassing ProctorU's anti-cheat methods, we believe it is an option to consider if you want to explore new methods that are not yet obsolete.
                                             </p>
+                                            <br />
+                                            <CtaBanner />
                                             <br />
                                             <p>
                                                 There are many methods you can use to cheat on ProctorU exams. All you need is a little practice on the method you want to use and some research. However, it's important to note that getting caught can have serious consequences. That's why we invite you to be part of the <a href="https://zeropreps.com" target="_blank" className="text-blue-500"></a> community, which is steadily growing and dedicated to delivering the best results to students like you.

@@ -11,6 +11,7 @@ import PulseLoader from "react-spinners/PulseLoader";
 import { Helmet } from "react-helmet-async";
 import { Link as LinkS } from "react-scroll";
 import article1 from '../../assets/graphics/article1.jpg'
+import CtaBanner from '../../components/CtaBanner'
 
 
 
@@ -78,6 +79,7 @@ function CanYouCheatProctoru() {
                                         So, can you cheat on ProctorU? Yes, it’s pretty easy, we have covered this popular topic in an article on <a href="http://zeropreps.com/blog/how-to-cheat-on-proctoru" target="_blank"className="text-blue-500"> ‘how to cheat on ProctorU’</a> and outlined several ways a student can get away with this.Cheating on ProctorU exams is not only facilitated by the fixed camera angle challenge that proctors face after the exam starts but also by the fact that it can be difficult to monitor all aspects of a student's testing environment remotely.
                                     </p>
                                     <br />
+                                    <CtaBanner/>
                                     <p>
                                         As we have discussed several times, simple and available tools like an <a href="https://zeropreps.com/blog/can-you-cheat-on-a-proctoru-exam-using-an-hdmi-splitter" target="_blank" className="text-blue-500">  HDMI splitter </a> and a smartphone are all a student needs to cheat on ProctorU.
                                         We have also tried to address as many questions as possible regarding the ProctorU platform.
