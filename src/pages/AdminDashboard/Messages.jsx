@@ -83,18 +83,18 @@ function Messages() {
   }, [sent, conversationData?.data?.messages?.length]);
  
   return (
-    <div className="bg mx-3 my-16 md:my-0">
+    <div className="bg mx-3  md:my-0">
       <div className="max-w-7xl mx-auto py-12 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
           {/* <h1 className="text-3xl font-bold text-gray-100 my-8">
              {conversationData?.data?.clientId}
           </h1> */}
 
-          <div className=" min-h-[500px] bg-chatBg max-h-[500px] rounded no-scrollbar border  overflow-y-auto overflow-x-auto ">
+          <div className="min-h-[500px] max-h-[500px]  bg-chatBg  rounded no-scrollbar border  overflow-y-auto overflow-x-auto ">
             {
               conversationData?.data?.messages?.map((message, index) => {
                 return(
-                  <div ref={scroll} className={message.senderId === auth?.userId ?"m-2  bg-[#379237] p-1 rounded-md  text-white w-[60%] float-right  "  : "text-white float-left bg-gray-800 w-[60%] m-2  p-1 rounded-md "}  key={index}>
+                  <div  className={message.senderId === auth?.userId ?"m-2  bg-[#379237] p-1 rounded-md  text-white w-[60%] float-right  "  : "text-white float-left bg-gray-800 w-[60%] m-2  p-1 rounded-md "}  key={index}>
                       <p className='p-2'>
                           {message?.message}
                       </p>

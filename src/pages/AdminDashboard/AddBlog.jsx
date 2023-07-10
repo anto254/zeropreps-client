@@ -61,8 +61,8 @@ function AddBlog() {
 
 
   return (
-    <div className='bg-dark  '>
-      <form action="" className="w-full px-3  ">
+    <div className='bg-dark pb-[100px] '>
+      <form action="" className="w-full px-3 overflow-y-auto ">
         <h1 className="font-bold my-4">Add Blog</h1>
         <div className="flex flex-col px-2 md:grid md:grid-cols-3 gap-3  ">
           <div className='flex flex-col gap-2'>
@@ -131,7 +131,7 @@ function AddBlog() {
           <h1>Blog Content</h1>
           <div className='text-gray-300'>
 
-          <Editor value={content} onChange={setContent} className="outline-none h-[100px]" />
+          <Editor value={content} onChange={setContent} className="outline-none " />
           </div>
 
         </div>
@@ -144,7 +144,7 @@ function AddBlog() {
           ) : (
             <button
               onClick={handleSubmit(submitProduct)}
-              className="bg-secondary outline-none rounded-md cursor-pointer  hover:bg-gray-500 text-center text-light px-4 py-2"
+              className="bg-secondary outline-none my-[x] rounded-md cursor-pointer  hover:bg-gray-500 text-center text-light px-4 py-2"
             >
               Add
             </button>

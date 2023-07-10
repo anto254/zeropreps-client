@@ -73,7 +73,7 @@ function EditBlog() {
   };
 
   return (
-    <div className="bg-dark  ">
+    <div className="bg-dark pb-[100px] ">
       {loadingBlog ? (
         <div className="pt-16 flex items-center justify-center">
           Loading<PulseLoader color="#0000ff" size={10} />
