@@ -252,12 +252,20 @@ function HomePage() {
           <h1 className="text-center font-bold my-2">Contact us </h1>
 
           <div className="flex flex-col justify-center items-center   ">
+            <h1 className="text-center">or</h1>
+            <div className="flex gap-2 justify-center items-center ">
+              <span className="text-light">
+                Email us at:
+              </span>
+              <a href="mailto:support@zeropreps.com" target="_blank" >support@zeropreps.com</a>
+            </div>
            
 
             <form
               onSubmit={handleSubmit(submitMessage)}
               className="min-h-[250px]  px-4 md:px-4 mt-4 bg-secondary shadow-md shadow-indigo-900 w-full md:w-[50%]"
             >
+
               <div className="flex flex-col gap-4 py-3 w-full ">
                 <div className="flex flex-col gap-3">
                   <h1 htmlFor="">Email </h1>
