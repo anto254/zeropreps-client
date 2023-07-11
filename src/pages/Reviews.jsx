@@ -86,7 +86,7 @@ function Reviews() {
               </td>
             </tr>
           ) : (
-            reviewsData?.data?.reviews.map((review, index) => {
+            reviewsData?.data?.reviews?.map((review, index) => {
               return (
                 <div key={index} className=" my-3 p-2 bg-secondary ">
                   <div className="flex items-center justify-between text-gray-400 ">
