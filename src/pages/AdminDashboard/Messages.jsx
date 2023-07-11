@@ -113,7 +113,7 @@ function Messages() {
             className="grid grid-cols-1 gap-6 "
           >
            
-            <div className="flex gap-2 justify-center items-center pt-1 ">
+            <div className="flex gap-2 justify-center items-center pt-1 md:mb-10 ">
               {/* <label
                 htmlFor="message"
                 className="block text-sm font-medium text-gray-700"

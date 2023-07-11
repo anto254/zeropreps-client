@@ -72,9 +72,8 @@ function Support() {
       <h1 className="font-bold text-lg">Live Chats </h1>
       <div className="my-[20px] ">
 
-        <div className="overflow-x-auto mb-3">
-          <div className="my-3">
-          </div>
+        <div className="overflow-x-auto mb-3 pb-[100px]">
+         
           <table className="w-full text-center table-auto border-collapse border border-slate-500 text-light text-sm">
             <thead className="bg-secondary bg-opacity-90 ">
               <tr>
@@ -91,7 +90,7 @@ function Support() {
               </tr>
             </thead>
 
-            <tbody className="text-dark">
+            <tbody className="text-dark ">
               {messageData?.data?.message  ? (
                 <tr>
                     <td colSpan={7} className=" text-center py-3 text-light">
