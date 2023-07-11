@@ -37,7 +37,7 @@ function Messages() {
     data: conversationData,
     isLoading: loadingConversation,
     isError: errorConversation,
-  } = useQuery([`messages--`], getConversation,{
+  } = useQuery([`messages-${clientId}`], getConversation,{
     refetchInterval: 1000,
   });
   // end...................

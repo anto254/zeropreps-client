@@ -201,7 +201,7 @@ function Dashboard() {
             </NavLink>
           ))}
         </div>
-        <main className="w-full bg-dark min-h-[100vh] my-0 px-0 md:px-0 overflow-y-scroll pb-[20px]">
+        <main className="w-full bg-dark min-h-[100vh] my-0 px-0 md:px-0 overflow-y-scroll pb-[100px]">
           <Outlet />
         </main>
       </div>
