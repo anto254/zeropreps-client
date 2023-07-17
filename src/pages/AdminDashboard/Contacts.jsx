@@ -33,7 +33,7 @@ function Contacts() {
 
    //end of fetching products------------------
   return (
-    <div className="mx-3 my-2">Contacts
+    <div className="mx-3 my-2 pb-[100px]">Contacts
 
         <div>
             <div className="my-4">
@@ -44,6 +44,8 @@ function Contacts() {
               onChange={setPage}
             />
           </div>
+          <div className="overflow-x-auto">
+
              <table className="w-full text-center table-auto border-collapse border border-slate-500 text-light text-sm">
             <thead className="bg-secondary bg-opacity-90 ">
               <tr>
@@ -106,6 +108,7 @@ function Contacts() {
              
             </tbody>
           </table>
+          </div>
         </div>
     </div>
   )
