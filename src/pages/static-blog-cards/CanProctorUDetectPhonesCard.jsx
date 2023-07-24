@@ -25,7 +25,7 @@ function CanProctorUDetectPhonesCard() {
                 <Link to={`/blog/can-proctoru-detect-phones`} >
 
                 <Text size="sm" color="#ffd700">
-                    <h1>Can ProctorU Detect Phones?</h1>
+                        <h1>Can ProctorU Detect Phones? Addressing More Questions About ProctorU.</h1>
                 </Text>
                 
                 </Link>

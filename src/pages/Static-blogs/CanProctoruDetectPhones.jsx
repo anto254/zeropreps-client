@@ -73,7 +73,7 @@ function CanProctoruDetectPhones() {
                         </div>
                         <div className="my-4 ">
                             <h1 className="font-semibold text-4xl ">
-                                Can ProctorU Detect Phones?
+                                Can ProctorU Detect Phones? Addressing More Questions About ProctorU.
                             </h1>
                             <div className="text-gray-400 leading-[1.75] py-3">
                                 <div>
@@ -88,6 +88,11 @@ function CanProctoruDetectPhones() {
                                     </p>
                                     <br />
                                     <p>
+                                        Once the exam has started, the platform relies on its proctors and AI-based monitoring systems to supervise the test-takers and ensure exam integrity. Proctors may actively monitor the students' actions through webcam feeds, screen sharing, and audio detection, but their focus is primarily on observing the test-taker's immediate environment and activities on the computer being used for the exam.</p>
+                                    <br />
+                                    <CtaBanner />
+                                    <br />
+                                    <p>
                                         Cell phone use poses a great risk to online proctoring of
                                         exams, perhaps due to the fact that it allows for easy
                                         access to unauthorized information and communication during
@@ -99,8 +104,7 @@ function CanProctoruDetectPhones() {
                                         identify when students are using them.
                                     </p>
                                     <br />
-                                    <CtaBanner />
-                                    <br />
+
                                     <p>
                                         In one of our articles, <a href="https://zeropreps.com/blog/how-to-cheat-on-proctoru" target="_blank" className="text-blue-500">‘how to cheat on ProctorU exams’</a> , we
                                         have discussed how students can exploit the use of cell

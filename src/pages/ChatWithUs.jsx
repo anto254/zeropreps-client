@@ -101,7 +101,7 @@ function ChatWithUs() {
                         </button>
                         <div className="bg-[#4a47a5] py-4 text-light rounded-t-md px-2">
                             <h1 className="font-bold text-lg text-light">Welcome to Zeropreps</h1>
-                            <h1>Hi there 👋</h1>
+                            <h1> We typically reply in 3 minutes.</h1>
                         </div>
 
                         {/* Your chat content goes here */}
