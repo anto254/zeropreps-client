@@ -53,10 +53,7 @@ function AddReview() {
 
 
 const onSubmitting = (data) => {
-  
-
-  console.log(data)
-      reviewMutate(data);
+        reviewMutate(data);
   };
 
   return (

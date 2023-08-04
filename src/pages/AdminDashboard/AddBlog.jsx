@@ -33,7 +33,6 @@ function AddBlog() {
   const [sending, setSending] = useState(false);
   
   const submitProduct = () => {
-    console.log(formData)
     if(singleFile === ""){
       toast.warn("Please upload image!");
       return;
@@ -52,7 +51,6 @@ function AddBlog() {
         
       })
       .catch((error) => {
-        console.error(error)
         toast.error(response?.data?.message)
         setSending(fasle)
       })

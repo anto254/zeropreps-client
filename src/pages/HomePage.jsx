@@ -168,12 +168,13 @@ function HomePage() {
                 loopDelay={9000}
               />
             </p>
+            <p className="text-gray-500 text-center ">Get test questions and answers beforehand!! Join our exclusive community before it's too late. </p>
           </div>
         </div>
 
         {/* blogs */}
         <div
-          className="bg-[#060818] px-6 py-4 md:px-[100px] mt-[60px]"
+          className="bg-[#060818] px-6  md:px-[100px] mt-[60px]"
           id="blogs"
         >
           <h1 className="text-lg font-bold my-3">Blogs</h1>

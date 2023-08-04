@@ -5,6 +5,10 @@ import axios from "../../api/axios";
 import { confirmAlert } from "react-confirm-alert";
 import { toast } from "react-toastify";
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+import { AiFillEdit } from 'react-icons/ai'
+import { useDisclosure } from '@mantine/hooks';
+import { Modal, Button, Group } from '@mantine/core';
+import EditReview from "./EditReview";
 
 
 function MyReviews() {
@@ -12,6 +16,8 @@ function MyReviews() {
   const [activePage, setPage] = useState(1);
   const [reviewId, setDeleteId] = useState("");
   const queryClient = useQueryClient();
+  const [opened, { open, close }] = useDisclosure(false);
+  const [editReviewId, setEditReviewId] = useState('')
 
   const fetchReviews = () => {
     return axios.get(`/reviews?page=${activePage}&perPage=${perPage}`);
@@ -28,7 +34,6 @@ function MyReviews() {
   });
 
   const totalPages = Math.ceil(reviewsData?.data?.count / perPage);
-  console.log(reviewsData?.data?.reviews);
   // pagination refetch
   useEffect(() => {
     refetch();
@@ -86,9 +91,16 @@ function MyReviews() {
     });
   };
   // end of delete product
+  const handleCloseModal = (value)=>{
+         close();
+  }
 
   return (
     <div>
+      <Modal opened={opened} centered onClose={close} title="Edit Review  ">
+        
+        <EditReview reviewId={editReviewId} handleCloseModal={handleCloseModal} />
+      </Modal>
       <div className="bg-secondary bg-opacity-30 px-6 py-4 md:px-[100px] pt-[90px]">
         <h1 className="text-lg font-bold my-3">Reviews</h1>
 
@@ -168,6 +180,15 @@ function MyReviews() {
                         {review?.review}
                       </td>
                       <td className="border-collapse border-b border-slate-500 py-3 px-3">
+                        <div className="flex justify-center gap-3">
+                          <button className="bg-primary text-secondary px-3 rounded-md"
+                          onClick={()=>{
+                            setEditReviewId(review?._id)
+                            open()}}
+                          >
+                            Edit
+                          </button>
+
                         <button
                           disabled={isDeleting}
                           onClick={() => {
@@ -178,6 +199,7 @@ function MyReviews() {
                         >
                           Delete
                         </button>
+                        </div>
                       </td>
                     </tr>
                   );

@@ -33,7 +33,6 @@ function Reviews() {
   });
 
   const totalPages = Math.ceil(reviewsData?.data?.count / perPage);
-  console.log(reviewsData?.data?.reviews);
   // pagination refetch
   useEffect(() => {
     refetch();

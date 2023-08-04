@@ -94,14 +94,14 @@ function ChatWithUs() {
                 {isChatOpen && (
                     <div className="fixed bottom-8 right-4 w-[90%] md:w-[350px] h-[500px] bg-white rounded-lg shadow-lg z-10 transition-all duration-300 ease-in-out">
                         <button
-                            className="absolute top-6 right-3 w-6 h-6 text-gray-600 hover:text-gray-800"
+                            className="absolute top-3 right-3 w-6 h-6 text-gray-600 hover:text-gray-800"
                             onClick={toggleChat}
                         >
                             <IoCloseSharp color="white" size={23} />
                         </button>
-                        <div className="bg-[#4a47a5] py-4 text-light rounded-t-md px-2">
+                        <div className="bg-blue-500 py-3 text-light rounded-t-md px-2">
                             <h1 className="font-bold text-lg text-light">Welcome to Zeropreps</h1>
-                            <h1> We typically reply in 3 minutes.</h1>
+                            <h1 className='text-xs' > Get test questions and answers beforehand!! Join our exclusive community before it's too late.</h1>
                         </div>
 
                         {/* Your chat content goes here */}

@@ -52,7 +52,6 @@ function EditBlog() {
   const [sending, setSending] = useState(false);
 
   const submitProduct = () => {
-    console.log(formData);
     if (content === "") {
       toast.warn("Content is required!");
       return;
@@ -66,7 +65,6 @@ function EditBlog() {
         setSending(false);
       })
       .catch((error) => {
-        console.error(error);
         toast.error(response?.data?.message);
         setSending(false);
       });

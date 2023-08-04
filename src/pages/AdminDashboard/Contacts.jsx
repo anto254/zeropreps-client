@@ -24,7 +24,6 @@ function Contacts() {
   });
 
   const totalPages = Math.ceil(messagesData?.data?.count / perPage);
-  console.log(messagesData?.data)
 
   // pagination refetch
   useEffect(() => {
