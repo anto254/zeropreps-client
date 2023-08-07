@@ -97,6 +97,22 @@ function EditReview({ reviewId, handleCloseModal }) {
                             {errors?.time?.type === 'required' && 'Time is required'}
                         </p>
                     </div>
+                            <div className='flex flex-col gap-2'>
+                                <h1>
+                                    Name<sup className="text-red-500 text-md">*</sup>
+                                </h1>
+                                <input
+                                    type="text"
+                                    defaultValue={reviewData?.data?.name}
+                                    placeholder='time'
+                                    className="p-1 border-[2px] rounded-md border-gray-300  outline-none  w-full"
+                                    {...register('name', { required: true })}
+
+                                />
+                                <p className="text-red-500 text-sm">
+                                    {errors?.time?.type === 'required' && 'Time is required'}
+                                </p>
+                            </div>
 
                     
                     <div className='flex flex-col gap-2'>
