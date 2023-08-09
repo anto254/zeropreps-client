@@ -80,7 +80,7 @@ function EditReview({ reviewId, handleCloseModal }) {
                 </div>
                 :
             <form action="" className="w-full px-3  " onSubmit={handleSubmit(onSubmitting)}>
-                <div className="flex flex-col px-2 gap-3  "> 
+                <div className="flex flex-col px-2 gap-  "> 
                     <div className='flex flex-col gap-2'>
                         <h1>
                             Time<sup className="text-red-500 text-md">*</sup>
@@ -107,6 +107,23 @@ function EditReview({ reviewId, handleCloseModal }) {
                                     placeholder='time'
                                     className="p-1 border-[2px] rounded-md border-gray-300  outline-none  w-full"
                                     {...register('name', { required: true })}
+
+                                />
+                                <p className="text-red-500 text-sm">
+                                    {errors?.time?.type === 'required' && 'Time is required'}
+                                </p>
+                            </div>
+                            <div className='flex flex-col gap-2'>
+                                <h1>
+                                    Star<sup className="text-red-500 text-md">*</sup>
+                                </h1>
+                                <input
+                                    type="number"
+                                    max={5}
+                                    defaultValue={reviewData?.data?.star}
+                                    placeholder='stars'
+                                    className="p-1 border-[2px] rounded-md border-gray-300  outline-none  w-full"
+                                    {...register('star', { required: true })}
 
                                 />
                                 <p className="text-red-500 text-sm">
