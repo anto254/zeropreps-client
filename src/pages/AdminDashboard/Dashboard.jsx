@@ -9,6 +9,8 @@ import useAuth from "../../hooks/useAuth";
 import { useQuery } from "@tanstack/react-query";
 import { Indicator } from "@mantine/core";
 import useAxiosPrivate from "../../hooks/useAxiosPrivate";
+import playNotificationSound from '../../components/NotificationSound';
+
 
 function Dashboard() {
   const email = localStorage.getItem('email');
@@ -29,6 +31,16 @@ function Dashboard() {
       refetchInterval: 5000 // refetch every 5 seconds
     }
   );
+
+  useEffect(() => {
+
+    if (supportData?.data?.totalAdminUnread > 0) {
+      playNotificationSound(); // Play sound on successful fetch
+      
+    }
+  
+
+  }, [supportData?.data?.totalAdminUnread])
 
   const [isOpen, setIsOpen] = useState(true);
   const [mobileMenu, setMobileMenu] = useState(false);

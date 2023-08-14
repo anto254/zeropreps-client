@@ -8,6 +8,8 @@ import useAuth from '../hooks/useAuth';
 import useAxiosPrivate from '../hooks/useAxiosPrivate';
 import { useQuery } from '@tanstack/react-query';
 import { toast } from 'react-toastify';
+import playNotificationSound from '../components/NotificationSound';
+import { usePageVisibility } from 'react-page-visibility';
 
 function ChatWithUs() {
     const [isChatOpen, setIsChatOpen] = useState(false);
@@ -15,6 +17,7 @@ function ChatWithUs() {
     const location = useLocation();
     const { pathname } = location;
     const axios = useAxiosPrivate();
+    const isVisible = usePageVisibility();
   
 
    
@@ -43,6 +46,8 @@ function ChatWithUs() {
             keepPreviousData: true,
             enabled: !!clientIdFromStorage,
             refetchInterval: 1000,
+            refetchIntervalInBackground:true,
+            
         },
     )
 
@@ -51,6 +56,11 @@ function ChatWithUs() {
         if (!auth?.liveChat) {
             setAuth({ liveChat: true });
             toast.info("You have a new message!")
+            playNotificationSound(); // Play sound on successful fetch
+
+        }
+        if (!isVisible) {
+            playNotificationSound();
         }
 
     }, [chatData?.data?.messages?.length])
@@ -63,6 +73,7 @@ function ChatWithUs() {
 
         setclientIdFromStorage(localStorage.getItem("clientId"));
     }, [localStorage.getItem("clientId")])
+
 
 
 
