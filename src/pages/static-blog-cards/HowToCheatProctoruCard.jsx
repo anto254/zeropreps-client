@@ -25,7 +25,7 @@ function HowToCheatProctoruCard() {
                 <Link to={`/blog/how-to-cheat-on-proctoru`}>
                 
                 <Text size="sm" color="#ffd700">
-                    <h1>How To Cheat On ProctorU</h1>
+                        <h1>Unveiling How Some Students Cheat on ProctorU Exams</h1>
                 </Text>
                 </Link>
                 <Text size="sm" color="dimmed">
