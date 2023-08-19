@@ -12,6 +12,10 @@ import { Helmet } from "react-helmet-async";
 import { Link as LinkS } from "react-scroll";
 import article1 from '../../assets/graphics/article2.jpg'
 import CtaBanner from '../../components/CtaBanner'
+import image1 from '../../assets/graphics/image1.jpeg';
+import image2 from '../../assets/graphics/image2.jpeg';
+import image3 from '../../assets/graphics/image3.jpeg';
+
 
 
 function CanYouCheatProctoru() {
@@ -48,7 +52,7 @@ function CanYouCheatProctoru() {
     return (
         <div>
             <Helmet>
-                <title>How To Cheat On ProctorU</title>
+                <title>Unveiling How Some Students Cheat on ProctorU Exams</title>
                 <meta name="description" content="Blog summary: There are many methods you can use to cheat on ProctorU exams. All you need is a little practice on the method you want to use and some research. However, it's important to note that getting caught can have serious consequences." />
                 <meta name="keywords" content={"How To Cheat On ProctorU"} />
                 <link rel="canonical" href={`https://zeropreps.com/blog/${"how-to-cheat-on-proctoru"}`} />
@@ -66,10 +70,12 @@ function CanYouCheatProctoru() {
                         </div>
                         <div className="my-4 ">
                             <h1 className="font-semibold text-4xl ">
-                                How To Cheat On ProctorU
+                                Unveiling How Some Students Cheat on ProctorU Exams
                             </h1>
                             <div className="text-gray-400 leading-[1.75] py-3">
                                 <div>
+                                    <span data-nosnippet>
+
                                     <p>
                                         We have documented in quite a number of our blogs how easy it is to cheat on ProctorU exams. We were also keen to highlight that most of the popular methods discussed on online platforms highly depend on some level of luck for them to work. At Zeropreps, we don’t endorse the use of these methods, as one single mistake may land you in problems and you may find yourself unable to continue with your academic journey. The information contained in this article is solely for educational purposes.                                    </p>
                                     <br />
@@ -78,6 +84,7 @@ function CanYouCheatProctoru() {
                                         We will not, however, dwell much on some <a href="https://zeropreps.com/blog/debunking-old-methods-used-to-cheat-on-proctoru-exams" target="_blank" className="text-blue-500"> old methods that students discovered decades ago</a>, some are also easily detected by ProctorU.
 
                                     </p>
+                                    </span>
                                     <br />
                                     <CtaBanner/>
                                     <ul>
@@ -111,6 +118,8 @@ function CanYouCheatProctoru() {
                                                 <li>
                                                     ●	<span className="font-bold">Clone Government or school ID</span>: Fake IDs can lead to your test being flagged, however, you can find services online that can guide you on how to make clean cloned documents. Make sure the test-helper's face is the one that appears on your ProctorU profile. During the exam, the idea is to have the test-helper pass the identity check by presenting the cloned ID that contains the student's personal details, except with their own face on the ID to match what is in the profile.
                                                 </li>
+                                                <img src={image1} className="my-2" alt="Image courtesy: Zeropreps, Screenshot Of a forum selling IDs in the Deep web" />
+                                                <caption className="text-primary italic flex flex-wrap">Image courtesy: Zeropreps, Screenshot Of a forum selling IDs in the Deep web</caption>
                                             </ul>
                                             <p>
                                                 Finally, it's important to ensure that your test-helper is well-versed in the test you are taking. There are many risks involved here, and the last thing you want is to pay for a risky service and still not pass the exam.
@@ -123,8 +132,15 @@ function CanYouCheatProctoru() {
                                             <p>
                                                 ProctorU is able to detect virtualization techniques. Proctors deploy scripts that help them detect virtual assistance or emulation. Ventoy, however, is a cool tool that lets you run a Windows virtual machine directly on your computer's hardware, just like it's running on VM software. So, you get all the perks of a VM, like isolation, separation, and snapshotting. The best part is, proctoring software won't even detect it because it's not emulation – you're actually running Windows on real physical hardware.
                                             </p>
+                                            <div className="flex flex-col md:flex-row justify-center gap-3 px-2 my-3">
+                                                <img src={image2} alt="" />
+                                                <img src={image3} alt="" />
+
+                                            </div>
+                                            <caption className="text-primary italic flex justify-start flex-wrap">Image courtesy: Zeropreps, Screenshots, Maths Exams (Fraction Proficiency, Matrix & Statistics)   You can easily take Exam screenshots with Ventoy virtualization without raising suspicion to ProctorU</caption>
+                                            
                                             <p>
-                                                We can help you with the setup, although there is full documentation and everything you need available on their <a href="https://www.ventoy.net/" target="_blank" className="text-blue-500"></a> . Ventoy is unlike other virtualization tools, and we were able to test it. We can confidently say that you don't need to be tech-savvy to use it. Although our service is very different from what the Ventoy tool can achieve in terms of bypassing ProctorU's anti-cheat methods, we believe it is an option to consider if you want to explore new methods that are not yet obsolete.
+                                                We can help you with the setup, although there is full documentation and everything you need available on their <a href="https://www.ventoy.net/" target="_blank" className="text-blue-500">website</a> . Ventoy is unlike other virtualization tools, and we were able to test it. We can confidently say that you don't need to be tech-savvy to use it. Although our service is very different from what the Ventoy tool can achieve in terms of bypassing ProctorU's anti-cheat methods, we believe it is an option to consider if you want to explore new methods that are not yet obsolete.
                                             </p>
                                             <br />
                                             <CtaBanner />
