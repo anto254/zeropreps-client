@@ -97,9 +97,16 @@ function HomePage() {
   return (
     <div className="">
       <Helmet>
-        <title>ZeroPreps</title>
+        <title>Hire ZeroPreps To Take Proctored Exam for You</title>
+        <meta
+          name="description"
+          content="Pay ZeroPreps to take Proctoru exam for you. We connect you with professionals to make the process smoother. Quality, trust, and discretion assured."
+        />
         <meta name="description" content="cheat proctoru, cheat GRE" />
-        <meta name="keywords" content="cheat proctorU, cheat GRE, cheat online proctored exam, cheat TOEFL, flaged by proctoru, " />
+        <meta
+          name="keywords"
+          content="cheat proctorU, cheat GRE, cheat online proctored exam, cheat TOEFL, flaged by proctoru, "
+        />
         <link rel="canonical" href={`/`} />
       </Helmet>
       <NavBar />
@@ -122,11 +129,10 @@ function HomePage() {
               </p>
               <div className="py-5  flex justify-center md:justify-start items-center gap-6">
                 <Link to={"/contact"}>
-                <button className="border border-primary flex items-center  text-white font-bold py-2 px-4 ">
-                    Contact Us                  
-                </button> 
+                  <button className="border border-primary flex items-center  text-white font-bold py-2 px-4 ">
+                    Contact Us
+                  </button>
                 </Link>
-
               </div>
               <div className="pt-8 flex justify-center md:justify-end">
                 <LinkS
@@ -168,24 +174,21 @@ function HomePage() {
                 loopDelay={9000}
               />
             </p>
-            <p className="text-gray-500 text-center ">Get test questions and answers beforehand!! Join our exclusive community before it's too late. </p>
+            <p className="text-gray-500 text-center ">
+            Hire ZeroPreps to guide you through your ProctorU exam. 
+            </p>
           </div>
         </div>
 
         {/* blogs */}
-        <div
-          className="bg-[#060818] px-6  md:px-[100px] mt-[60px]"
-          id="blogs"
-        >
+        <div className="bg-[#060818] px-6  md:px-[100px] mt-[60px]" id="blogs">
           <h1 className="text-lg font-bold my-3">Blogs</h1>
 
           <div className=" flex flex-col md:grid md:grid-cols-4 gap-4 ">
             <CanYouCheatProctoruCard />
-            <HowToCheatProctoruCard/>
-            <CanProctoruSeeMyScreenCard/>
-            <CanProctorUDetectPhonesCard/>
-            
-          
+            <HowToCheatProctoruCard />
+            <CanProctoruSeeMyScreenCard />
+            <CanProctorUDetectPhonesCard />
           </div>
           <div>
             <Link to="/blogs">
@@ -225,7 +228,7 @@ function HomePage() {
                       <p>{review?.time}</p>
                     </div>
                     <p className="p-2 text-gray-400 h-[250px] overflow-hidden ">
-                      {review?.review} 
+                      {review?.review}
                     </p>
                     {/* star icons */}
                     <div className="flex items-center  justify-between">
@@ -255,18 +258,16 @@ function HomePage() {
           <div className="flex flex-col justify-center items-center   ">
             <h1 className="text-center">or</h1>
             <div className="flex gap-2 justify-center items-center ">
-              <span className="text-light">
-                Email us at:
-              </span>
-              <a href="mailto:support@zeropreps.com" target="_blank" >support@zeropreps.com</a>
+              <span className="text-light">Email us at:</span>
+              <a href="mailto:support@zeropreps.com" target="_blank">
+                support@zeropreps.com
+              </a>
             </div>
-           
 
             <form
               onSubmit={handleSubmit(submitMessage)}
               className="min-h-[250px]  px-4 md:px-4 mt-4 bg-secondary shadow-md shadow-indigo-900 w-full md:w-[50%]"
             >
-
               <div className="flex flex-col gap-4 py-3 w-full ">
                 <div className="flex flex-col gap-3">
                   <h1 htmlFor="">Email </h1>

@@ -50,7 +50,7 @@ function Contact() {
       <NavBar />
       <div className="pt-[90px] min-h-screen ">
         <div className="py-5" id="contact ">
-          <h1 className="text-center font-bold my-2">Contact us </h1>
+          <h1 className="text-center font-bold my-2">Zeropreps | Contact us </h1>
           <h1 className="text-center">or</h1>
           <div className="flex gap-2 justify-center items-center ">
             <span className="text-light">

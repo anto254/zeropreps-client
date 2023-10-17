@@ -10,7 +10,7 @@ const CtaBanner = () => {
         <div className="bg-blue-500 py-4 my-5 px-3 rounded-lg">
             <div className="container mx-auto flex items-center justify-between">
                 {/* <p className="text-white text-lg">Need help with your ProctorU exam? Chat with us!</p> */}
-                <p className="text-white text-lg basis-10/12">Need help with your ProctorU exam? Get test questions and answers beforehand!! Join our exclusive community before it's too late.</p>
+                <p className="text-white text-lg basis-10/12">Need help with your ProctorU exam? Hire ZeroPreps to guide you through your ProctorU exam. </p>
 
                 <button className="bg-blue-900 basis-2/12 flex justify-center items-center hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
                     onClick={() => {
@@ -18,8 +18,7 @@ const CtaBanner = () => {
 
                     }}
                 >
-                    <BsChatDotsFill className="inline-block mr-2" />
-                    <p className="hidden md:flex">
+                    <p className="flex">
                         Live Chat
                     </p>
                 </button>

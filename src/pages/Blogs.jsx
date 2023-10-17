@@ -49,7 +49,7 @@ function Blogs() {
   return (
     <div className='' >
       <Helmet>
-        <title>ZeroPreps</title>
+        <title>ZeroPreps | Blog </title>
         <meta name="description" content="find topics on, does proctoru detect hdmi splitter, unpermitted resources by proctoru, test helper in proctoru exam, proctoru bypass or bypass proctoru, cheat proctoru with chatgpt, cheat LSAT and more information on proctoru and online proctored exams." />
         <meta name="keywords" content="cheat proctorU, cheat GRE, cheat online proctored exam, cheat TOEFL, flaged by proctoru, " />
         <link rel="canonical" href={`https://zeropreps.com/blogs`} />
