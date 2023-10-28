@@ -97,12 +97,11 @@ function HomePage() {
   return (
     <div className="">
       <Helmet>
-        <title>Hire ZeroPreps To Take Proctored Exam for You</title>
+        <title>ZeroPreps: Simplify Your ProctorU Exams.</title>
         <meta
           name="description"
-          content="Pay ZeroPreps to take Proctoru exam for you. We connect you with professionals to make the process smoother. Quality, trust, and discretion assured."
+          content="Ease exam stress with ZeroPreps - your go-to support for ProctorU tests, ensuring a smoother and simpler experience for every student."
         />
-        <meta name="description" content="cheat proctoru, cheat GRE" />
         <meta
           name="keywords"
           content="cheat proctorU, cheat GRE, cheat online proctored exam, cheat TOEFL, flaged by proctoru, "
