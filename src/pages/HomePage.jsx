@@ -174,7 +174,8 @@ function HomePage() {
               />
             </p>
             <p className="text-gray-500 text-center ">
-            Hire ZeroPreps to guide you through your ProctorU exam. 
+              If we can't do it, we'll say it. If we can, we'll make it happen.
+              ProctorU Exams ONLY!
             </p>
           </div>
         </div>

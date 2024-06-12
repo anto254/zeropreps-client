@@ -112,7 +112,7 @@ function ChatWithUs() {
                         </button>
                         <div className="bg-blue-500 py-3 text-light rounded-t-md px-2">
                             <h1 className="font-bold text-lg text-light">Welcome to Zeropreps</h1>
-                            <h1 className='text-xs' >We help you pass your exam with minimal effort required.</h1>
+                            <h1 className='text-xs' >If we can't do it, we'll say it. If we can, we'll make it happen. ProctorU Exams ONLY!</h1>
                         </div>
 
                         {/* Your chat content goes here */}
